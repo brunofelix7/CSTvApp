@@ -3,6 +3,10 @@
     <!-- TODO: App name -->
     <string name="app_name">CSTv</string>
 
+    <!-- TODO: Toolbar titles -->
+    <string name="title_matches">Matches</string>
+    <string name="title_league">League</string>
+
     <!-- TODO: App texts -->
     <string name="text_vs">VS</string>
     <string name="text_team_one">Team One</string>
