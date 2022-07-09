@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">CSTvApp</string>
+
+    <!-- TODO: App name -->
+    <string name="app_name">CSTv</string>
+
+    <!-- TODO: App texts -->
+    <string name="text_vs">VS</string>
+    <string name="text_team_one">Team One</string>
+    <string name="text_team_two">Team Two</string>
+    <string name="text_league">IEM Cologne 2022</string>
+    <string name="text_date_time">Date/Time</string>
+
+    <!-- TODO: Accessibility -->
+    <string name="acc_img_team_one">Image team one</string>
+    <string name="acc_img_team_two">Image team two</string>
+    <string name="acc_img_league">Image league logo</string>
+
 </resources>
