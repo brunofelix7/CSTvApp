@@ -16,6 +16,9 @@
         <!-- Background color. -->
         <item name="android:windowBackground">@color/light</item>
 
+        <!-- Text color. -->
+        <item name="android:textColor">@color/black</item>
+
         <!-- Toolbar color. -->
         <item name="android:windowActionBar">@color/light</item>
     </style>

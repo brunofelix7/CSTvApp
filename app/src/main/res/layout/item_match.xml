@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_item"
         android:layout_width="match_parent"
-        android:layout_height="512dp"
+        android:layout_height="220dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
@@ -22,17 +24,126 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_card"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/text_vs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_vs"
+                app:layout_constraintBottom_toTopOf="@+id/line_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/img_team_one"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/acc_img_team_one"
+                app:layout_constraintBottom_toBottomOf="@+id/text_vs"
+                app:layout_constraintEnd_toStartOf="@+id/text_vs"
+                app:layout_constraintTop_toTopOf="@+id/text_vs"
+                app:srcCompat="@mipmap/logo_team_one" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/text_team_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/text_team_one"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/img_team_one"
+                app:layout_constraintStart_toStartOf="@+id/img_team_one"
+                app:layout_constraintTop_toBottomOf="@+id/img_team_one"
+                tools:text="Imperial e-Sports" />
+
+            <ImageView
+                android:id="@+id/img_team_two"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="32dp"
+                android:contentDescription="@string/acc_img_team_two"
+                app:layout_constraintBottom_toBottomOf="@+id/text_vs"
+                app:layout_constraintStart_toEndOf="@+id/text_vs"
+                app:layout_constraintTop_toTopOf="@+id/text_vs"
+                app:srcCompat="@mipmap/logo_team_two" />
+
+            <TextView
+                android:id="@+id/text_team_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/text_team_two"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/img_team_two"
+                app:layout_constraintStart_toStartOf="@+id/img_team_two"
+                app:layout_constraintTop_toBottomOf="@+id/img_team_two"
+                tools:text="Furia e-Sports" />
+
+            <ImageView
+                android:id="@+id/img_league"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/acc_img_league"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_separator"
+                app:srcCompat="@mipmap/logo_csgo" />
+
+            <TextView
+                android:id="@+id/text_league"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/text_league"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_league"
+                app:layout_constraintStart_toEndOf="@+id/img_league"
+                app:layout_constraintTop_toTopOf="@+id/img_league"
+                tools:text="IEM Cologne 2022" />
+
+            <View
+                android:id="@+id/line_separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="40dp"
+                android:background="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_date_time"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_rounded"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_date_time"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp"
+                    tools:text="Hoje, 21:00" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,9 @@
         <!-- Background color. -->
         <item name="android:windowBackground">?attr/colorPrimaryVariant</item>
 
+        <!-- Text color. -->
+        <item name="android:textColor">@color/white</item>
+
         <!-- Toolbar color. -->
         <item name="android:windowActionBar">?attr/colorPrimaryVariant</item>
 
