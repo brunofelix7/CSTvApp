@@ -1,9 +1,11 @@
 package me.brunofelix.cstvapp.di
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.DefineComponent
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.Dispatchers
 import me.brunofelix.cstvapp.BuildConfig
@@ -41,10 +43,16 @@ object ApiModule {
 
     @Singleton
     @Provides
-    fun provideMatchRepository(api: ApiService) : MatchRepository = MatchRepositoryImpl(api)
+    fun provideIODispatcher() = Dispatchers.IO
 
     @Singleton
     @Provides
-    fun provideIODispatcher() = Dispatchers.IO
+    fun provideContext(@ApplicationContext context: Context): Context = context.applicationContext
+
+    @Singleton
+    @Provides
+    fun provideMatchRepository(
+        api: ApiService, @ApplicationContext context: Context
+    ): MatchRepository = MatchRepositoryImpl(api, context)
 
 }

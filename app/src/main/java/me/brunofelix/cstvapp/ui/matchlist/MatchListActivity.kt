@@ -37,7 +37,7 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
                     }
                     is MatchListUIState.OnSuccess -> {
                         binding.progressBar.isVisible = false
-                        Timber.d(uiState.response.toString())
+                        Timber.d(uiState.data.toString())
                     }
                     is MatchListUIState.OnError -> {
                         binding.progressBar.isVisible = false

@@ -14,6 +14,10 @@
     <string name="text_league">IEM Cologne 2022</string>
     <string name="text_date_time">Date/Time</string>
 
+    <!-- TODO: App messages -->
+    <string name="msg_general_error">Ops! An error occurred, try again</string>
+    <string name="msg_timeout_error">Could not connect to server</string>
+
     <!-- TODO: Accessibility -->
     <string name="acc_img_team_one">Image team one</string>
     <string name="acc_img_team_two">Image team two</string>

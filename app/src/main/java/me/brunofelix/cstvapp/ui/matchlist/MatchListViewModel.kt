@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MatchListViewModel @Inject constructor(
     private val repository: MatchRepository,
-    private val dispatcher: CoroutineDispatcher
+    private val dispatcher: CoroutineDispatcher,
 ): ViewModel() {
 
     private val _uiStateFlow = MutableStateFlow<MatchListUIState>(MatchListUIState.Initial)
@@ -24,16 +24,22 @@ class MatchListViewModel @Inject constructor(
         _uiStateFlow.value = MatchListUIState.Loading
 
         viewModelScope.launch(dispatcher) {
-            when(val response = repository.fetchMatches()) {
+            when(val result = repository.fetchMatches()) {
                 is ApiResult.OnSuccess -> {
-                    if (response.data == null) {
-                        _uiStateFlow.value = MatchListUIState.OnError(response.message ?: "")
+                    if (result.data == null) {
+                        _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
                     } else {
-                        _uiStateFlow.value = MatchListUIState.OnSuccess(response.data)
+                        _uiStateFlow.value = MatchListUIState.OnSuccess(result.data)
                     }
                 }
+                is ApiResult.OnNetworkError -> {
+                    _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
+                }
+                is ApiResult.OnTimeOutError -> {
+                    _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
+                }
                 is ApiResult.OnError -> {
-                    _uiStateFlow.value = MatchListUIState.OnError(response.message ?: "")
+                    _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
                 }
             }
         }
