@@ -1,0 +1,29 @@
+package me.brunofelix.cstvapp.data.api.response
+
+import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class MatchResponse(
+    @SerializedName("id")
+    val id: Int?,
+
+    @SerializedName("league_id")
+    val leagueId: Int?,
+
+    @SerializedName("serie_id")
+    val serieId: Int?,
+
+    @SerializedName("tournament_id")
+    val tournamentId: Int?,
+
+    @SerializedName("scheduled_at")
+    val scheduledAt: String?,
+
+    @SerializedName("status")
+    val status: String?,
+
+    @SerializedName("name")
+    val name: String?
+) : Parcelable
