@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("csgo/matches")
-    suspend fun fetchMatches(): Response<ApiResponse>
+    suspend fun fetchMatches(): Response<List<ApiResponse>>
 }

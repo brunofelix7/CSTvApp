@@ -25,5 +25,8 @@ data class MatchResponse(
     val status: String?,
 
     @SerializedName("name")
-    val name: String?
+    val name: String?,
+
+    @SerializedName("opponents")
+    val opponents: List<OpponentListResponse>?,
 ) : Parcelable

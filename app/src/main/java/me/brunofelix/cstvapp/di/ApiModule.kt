@@ -5,9 +5,13 @@ import dagger.Provides
 import dagger.hilt.DefineComponent
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.Dispatchers
 import me.brunofelix.cstvapp.BuildConfig
 import me.brunofelix.cstvapp.data.api.ApiService
 import me.brunofelix.cstvapp.data.api.interceptor.ApiInterceptor
+import me.brunofelix.cstvapp.data.api.repository.MatchRepository
+import me.brunofelix.cstvapp.data.api.repository.MatchRepositoryImpl
+import okhttp3.Dispatcher
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,7 +27,7 @@ object ApiModule {
     fun provideClient(): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(ApiInterceptor())
         .readTimeout(30, TimeUnit.SECONDS)
-        .writeTimeout(30,TimeUnit.SECONDS)
+        .writeTimeout(30, TimeUnit.SECONDS)
         .build()
 
     @Singleton
@@ -34,5 +38,13 @@ object ApiModule {
         .client(provideClient())
         .build()
         .create(ApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideMatchRepository(api: ApiService) : MatchRepository = MatchRepositoryImpl(api)
+
+    @Singleton
+    @Provides
+    fun provideIODispatcher() = Dispatchers.IO
 
 }

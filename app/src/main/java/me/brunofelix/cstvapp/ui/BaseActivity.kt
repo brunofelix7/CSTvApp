@@ -9,8 +9,7 @@ import me.brunofelix.cstvapp.R
 
 abstract class BaseActivity<B : ViewBinding>(val bindingFactory: (LayoutInflater) -> B) : AppCompatActivity() {
 
-    private lateinit var binding: B
-    private val duration: Boolean = true
+    lateinit var binding: B
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
