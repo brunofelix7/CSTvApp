@@ -3,7 +3,6 @@ package me.brunofelix.cstvapp.di
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.DefineComponent
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
@@ -13,7 +12,6 @@ import me.brunofelix.cstvapp.data.api.ApiService
 import me.brunofelix.cstvapp.data.api.interceptor.ApiInterceptor
 import me.brunofelix.cstvapp.data.api.repository.MatchRepository
 import me.brunofelix.cstvapp.data.api.repository.MatchRepositoryImpl
-import okhttp3.Dispatcher
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

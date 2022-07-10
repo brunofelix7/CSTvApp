@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:theme="@style/Theme.ThemeCSTvApp">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_item"
+        android:id="@+id/card_item"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:layout_marginStart="16dp"
@@ -44,14 +43,15 @@
 
             <ImageView
                 android:id="@+id/img_team_one"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:layout_marginEnd="32dp"
                 android:contentDescription="@string/acc_img_team_one"
                 app:layout_constraintBottom_toBottomOf="@+id/text_vs"
                 app:layout_constraintEnd_toStartOf="@+id/text_vs"
                 app:layout_constraintTop_toTopOf="@+id/text_vs"
-                app:srcCompat="@mipmap/logo_team_one" />
+                app:srcCompat="@mipmap/logo_empty_team"
+                tools:srcCompat="@mipmap/logo_team_one" />
 
             <TextView
                 android:id="@+id/text_team_one"
@@ -67,14 +67,15 @@
 
             <ImageView
                 android:id="@+id/img_team_two"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:layout_marginStart="32dp"
                 android:contentDescription="@string/acc_img_team_two"
                 app:layout_constraintBottom_toBottomOf="@+id/text_vs"
                 app:layout_constraintStart_toEndOf="@+id/text_vs"
                 app:layout_constraintTop_toTopOf="@+id/text_vs"
-                app:srcCompat="@mipmap/logo_team_two" />
+                app:srcCompat="@mipmap/logo_empty_team"
+                tools:srcCompat="@mipmap/logo_team_two" />
 
             <TextView
                 android:id="@+id/text_team_two"

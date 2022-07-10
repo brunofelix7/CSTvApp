@@ -20,11 +20,11 @@
         <activity
             android:name=".ui.matchdetails.MatchDetailsActivity"
             android:exported="false"
-            android:theme="@style/Theme.App.Starting" />
+            android:theme="@style/ThemeThemeCSTvApp"/>
         <activity
             android:name=".ui.matchlist.MatchListActivity"
             android:exported="true"
-            android:theme="@style/Theme.App.Starting">
+            android:theme="@style/ThemeThemeCSTvApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -2,7 +2,7 @@ package me.brunofelix.cstvapp
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
-import timber.log.Timber
+import me.brunofelix.cstvapp.util.initDebugLog
 
 @HiltAndroidApp
 class MyApplication : Application() {
@@ -10,11 +10,5 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         initDebugLog()
-    }
-
-    private fun initDebugLog() {
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
     }
 }

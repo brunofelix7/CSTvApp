@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:windowBackground"
-    android:theme="@style/Theme.ThemeCSTvApp"
     tools:context=".ui.matchlist.MatchListActivity">
 
     <ProgressBar
@@ -40,7 +39,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_series"
+        android:id="@+id/match_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"

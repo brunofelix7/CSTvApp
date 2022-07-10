@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ThemeCSTvApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="ThemeThemeCSTvApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary</item>
@@ -24,10 +24,10 @@
     </style>
 
     <!-- Splash screen theme. -->
-    <style name="Theme.ThemeCSTvApp.NoActionBar">
+    <style name="ThemeThemeCSTvApp.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.ThemeCSTvApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.ThemeCSTvApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="ThemeThemeCSTvApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="ThemeThemeCSTvApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
