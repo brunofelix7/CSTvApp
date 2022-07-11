@@ -23,6 +23,7 @@
     <!-- TODO: App messages -->
     <string name="msg_general_error">Ops! An error occurred, try again</string>
     <string name="msg_timeout_error">Could not connect to server</string>
+    <string name="msg_connection_error">You are not connected to the internet</string>
 
     <!-- TODO: Menu titles -->
     <string name="title_daynight">DayNight</string>

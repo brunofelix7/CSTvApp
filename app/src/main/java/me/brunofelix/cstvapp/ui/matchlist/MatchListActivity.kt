@@ -54,10 +54,12 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
             viewModel.uiSateFlow.collect { uiState ->
                 when(uiState) {
                     is MatchListUIState.Loading -> {
+                        binding.layoutError.root.isVisible = false
                         binding.matchList.isVisible = false
                         binding.progressBar.isVisible = true
                     }
                     is MatchListUIState.OnSuccess -> {
+                        binding.layoutError.root.isVisible = false
                         binding.matchList.isVisible = true
                         binding.progressBar.isVisible = false
 
@@ -65,10 +67,10 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
                         binding.matchList.adapter = adapter
                     }
                     is MatchListUIState.OnError -> {
-                        // TODO: Layout empty
+                        binding.layoutError.root.isVisible = true
+                        binding.layoutError.textError.text = uiState.message
                         binding.matchList.isVisible = false
                         binding.progressBar.isVisible = false
-                        toast(uiState.message)
                     }
                     else -> Unit
                 }

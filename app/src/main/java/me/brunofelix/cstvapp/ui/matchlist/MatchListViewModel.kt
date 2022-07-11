@@ -34,15 +34,9 @@ class MatchListViewModel @Inject constructor(
                         _uiStateFlow.value = MatchListUIState.OnSuccess(result.data)
                     }
                 }
-                is MatchResult.OnNetworkError -> {
-                    _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
-                }
-                is MatchResult.OnTimeOutError -> {
-                    _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
-                }
-                is MatchResult.OnError -> {
-                    _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
-                }
+                is MatchResult.OnNetworkError -> _uiStateFlow.value = MatchListUIState.OnError(result.message)
+                is MatchResult.OnTimeOutError -> _uiStateFlow.value = MatchListUIState.OnError(result.message)
+                is MatchResult.OnError -> _uiStateFlow.value = MatchListUIState.OnError(result.message)
             }
         }
     }

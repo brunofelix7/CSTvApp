@@ -31,7 +31,9 @@ class TeamRepositoryImpl constructor(
             }
 
             TeamResult.OnSuccess(teamsList)
-        } catch (e: SocketTimeoutException) {
+        }
+
+        catch (e: SocketTimeoutException) {
             Timber.e(e)
             TeamResult.OnTimeOutError(provider.res().getString(R.string.msg_timeout_error))
         } catch (e: Exception) {
