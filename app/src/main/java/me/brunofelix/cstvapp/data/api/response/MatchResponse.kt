@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class MatchResponse(
     @SerializedName("id")
-    val id: Int?,
+    val id: Long?,
 
     @SerializedName("league_id")
     val leagueId: Int?,
@@ -29,4 +29,10 @@ data class MatchResponse(
 
     @SerializedName("opponents")
     val opponents: List<OpponentListResponse>?,
+
+    @SerializedName("league")
+    val league: LeagueResponse?,
+
+    @SerializedName("serie")
+    val serie: SerieResponse?,
 ) : Parcelable

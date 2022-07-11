@@ -5,12 +5,12 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class OpponentResponse(
+data class LeagueResponse(
     @SerializedName("id")
     val id: Long?,
 
     @SerializedName("image_url")
-    val imageUrl: String?,
+    val imageURL: String?,
 
     @SerializedName("name")
     val name: String?

@@ -51,6 +51,7 @@ class MatchListActivity : AppCompatActivity(), MatchListClickListener {
                     is MatchListUIState.OnSuccess -> {
                         binding.matchList.isVisible = true
                         binding.progressBar.isVisible = false
+
                         val adapter = MatchListAdapter(uiState.data, this@MatchListActivity)
                         binding.matchList.adapter = adapter
                     }

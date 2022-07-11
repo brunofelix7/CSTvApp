@@ -5,13 +5,10 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class OpponentResponse(
+data class SerieResponse(
     @SerializedName("id")
     val id: Long?,
 
-    @SerializedName("image_url")
-    val imageUrl: String?,
-
     @SerializedName("name")
-    val name: String?
+    val name: String?,
 ) : Parcelable
