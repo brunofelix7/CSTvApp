@@ -14,23 +14,18 @@ import me.brunofelix.cstvapp.R
 import me.brunofelix.cstvapp.data.api.response.MatchResponse
 import me.brunofelix.cstvapp.databinding.ActivityMatchListBinding
 import me.brunofelix.cstvapp.extensions.toast
+import me.brunofelix.cstvapp.ui.BaseActivity
 import timber.log.Timber
 
 @AndroidEntryPoint
-class MatchListActivity : AppCompatActivity(), MatchListClickListener {
+class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
+    ActivityMatchListBinding::inflate), MatchListClickListener {
 
-    private lateinit var binding: ActivityMatchListBinding
     private val viewModel: MatchListViewModel by viewModels()
     private var uiStateJob: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setTheme(R.style.ThemeThemeCSTvApp)
-
-        binding = ActivityMatchListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         viewModel.fetchMatches()
         collectData()
     }
