@@ -12,6 +12,7 @@
     <string name="text_team_one">Team One</string>
     <string name="text_team_two">Team Two</string>
     <string name="text_league">IEM Cologne 2022</string>
+    <string name="text_serie">Open Qualifier Season 2022</string>
     <string name="text_date_time">Date/Time</string>
 
     <!-- TODO: App messages -->
@@ -21,6 +22,10 @@
     <!-- TODO: Menu titles -->
     <string name="title_daynight">DayNight</string>
     <string name="title_refresh">Refresh</string>
+    <string name="title_notify">Notification</string>
+
+    <!-- TODO: Extra keys -->
+    <string name="match_key">MATCH_EXTRA</string>
 
     <!-- TODO: Accessibility -->
     <string name="acc_img_team_one">Image team one</string>

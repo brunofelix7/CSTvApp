@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:background="?android:windowActionBar"
         app:elevation="0dp"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -35,13 +36,29 @@
             android:layout_height="wrap_content"
             app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Body1">
 
-            <TextView
-                android:id="@+id/text_toolbar_title"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/title_league"
-                android:textSize="18sp" />
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_league"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_league"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/text_serie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_serie"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -76,7 +93,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/text_vs"
             app:layout_constraintEnd_toStartOf="@+id/text_vs"
             app:layout_constraintTop_toTopOf="@+id/text_vs"
-            app:srcCompat="@mipmap/logo_team_one" />
+            app:srcCompat="@mipmap/logo_empty_team"
+            tools:srcCompat="@mipmap/logo_team_one"/>
 
         <TextView
             android:id="@+id/text_team_one"
@@ -99,7 +117,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/text_vs"
             app:layout_constraintStart_toEndOf="@+id/text_vs"
             app:layout_constraintTop_toTopOf="@+id/text_vs"
-            app:srcCompat="@mipmap/logo_team_two" />
+            app:srcCompat="@mipmap/logo_empty_team"
+            tools:srcCompat="@mipmap/logo_team_two" />
 
         <TextView
             android:id="@+id/text_team_two"
@@ -128,6 +147,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_match"
         tools:text="Hoje, 21:00" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

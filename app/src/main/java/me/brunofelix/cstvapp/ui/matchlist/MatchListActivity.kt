@@ -1,5 +1,6 @@
 package me.brunofelix.cstvapp.ui.matchlist
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.activity.viewModels
@@ -14,7 +15,9 @@ import me.brunofelix.cstvapp.R
 import me.brunofelix.cstvapp.data.api.response.MatchResponse
 import me.brunofelix.cstvapp.databinding.ActivityMatchListBinding
 import me.brunofelix.cstvapp.extensions.toast
+import me.brunofelix.cstvapp.extra.MatchExtra
 import me.brunofelix.cstvapp.ui.BaseActivity
+import me.brunofelix.cstvapp.ui.matchdetails.MatchDetailsActivity
 import timber.log.Timber
 
 @AndroidEntryPoint
@@ -79,6 +82,25 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
     }
 
     override fun onItemClick(match: MatchResponse) {
-        Timber.d(match.toString())
+        var matchExtra: MatchExtra? = null
+
+        if (match.opponents != null && match.opponents.isNotEmpty() && match.opponents.size > 1) {
+            matchExtra = MatchExtra(
+                id = match.id,
+                leagueName = match.league?.name,
+                serieName = match.serie?.name,
+                scheduledAt = match.scheduledAt,
+                teamOneId = match.opponents[0].opponent?.id,
+                teamTwoId = match.opponents[1].opponent?.id,
+                teamOneName = match.opponents[0].opponent?.name,
+                teamTwoName = match.opponents[1].opponent?.name,
+                teamOneImageUrl = match.opponents[0].opponent?.imageUrl,
+                teamTwoImageUrl = match.opponents[1].opponent?.imageUrl
+            )
+        }
+
+        val intent = Intent(this, MatchDetailsActivity::class.java)
+        intent.putExtra(getString(R.string.match_key), matchExtra)
+        startActivity(intent)
     }
 }

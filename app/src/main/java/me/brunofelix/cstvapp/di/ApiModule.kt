@@ -14,6 +14,7 @@ import me.brunofelix.cstvapp.data.api.repository.MatchRepository
 import me.brunofelix.cstvapp.data.api.repository.MatchRepositoryImpl
 import me.brunofelix.cstvapp.data.api.repository.TeamRepository
 import me.brunofelix.cstvapp.data.api.repository.TeamRepositoryImpl
+import me.brunofelix.cstvapp.util.AppProvider
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -51,13 +52,17 @@ object ApiModule {
 
     @Singleton
     @Provides
+    fun provideResources(@ApplicationContext context: Context) = AppProvider(context)
+
+    @Singleton
+    @Provides
     fun provideMatchRepository(
         api: ApiService, @ApplicationContext context: Context
-    ): MatchRepository = MatchRepositoryImpl(api, context)
+    ): MatchRepository = MatchRepositoryImpl(api, provideResources(context))
 
     @Singleton
     @Provides
     fun provideTeamRepository(
         api: ApiService, @ApplicationContext context: Context
-    ): TeamRepository = TeamRepositoryImpl(api, context)
+    ): TeamRepository = TeamRepositoryImpl(api, provideResources(context))
 }

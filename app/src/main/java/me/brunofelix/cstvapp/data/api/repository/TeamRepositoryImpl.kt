@@ -1,16 +1,16 @@
 package me.brunofelix.cstvapp.data.api.repository
 
-import android.content.Context
 import me.brunofelix.cstvapp.R
 import me.brunofelix.cstvapp.data.api.ApiResult
 import me.brunofelix.cstvapp.data.api.ApiService
 import me.brunofelix.cstvapp.data.api.response.TeamResponse
+import me.brunofelix.cstvapp.util.AppProvider
 import timber.log.Timber
 import java.net.SocketTimeoutException
 
 class TeamRepositoryImpl constructor(
     private val api: ApiService,
-    private val context: Context
+    private val provider: AppProvider
 ) : TeamRepository {
 
     override suspend fun getTeam(id: Long): ApiResult<TeamResponse?> {
@@ -24,10 +24,10 @@ class TeamRepositoryImpl constructor(
             }
         } catch (e: SocketTimeoutException) {
             Timber.e(e)
-            ApiResult.OnTimeOutError(context.getString(R.string.msg_timeout_error))
+            ApiResult.OnTimeOutError(provider.res().getString(R.string.msg_timeout_error))
         } catch (e: Exception) {
             Timber.e(e)
-            ApiResult.OnError(context.getString(R.string.msg_general_error))
+            ApiResult.OnError(provider.res().getString(R.string.msg_general_error))
         }
     }
 }

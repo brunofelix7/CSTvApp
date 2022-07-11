@@ -9,12 +9,14 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import me.brunofelix.cstvapp.data.api.ApiResult
 import me.brunofelix.cstvapp.data.api.repository.MatchRepository
+import me.brunofelix.cstvapp.util.AppProvider
 import javax.inject.Inject
 
 @HiltViewModel
 class MatchListViewModel @Inject constructor(
     private val repository: MatchRepository,
     private val dispatcher: CoroutineDispatcher,
+    private val provider: AppProvider
 ): ViewModel() {
 
     private val _uiStateFlow = MutableStateFlow<MatchListUIState>(MatchListUIState.Initial)
