@@ -10,13 +10,13 @@ data class MatchResponse(
     val id: Long?,
 
     @SerializedName("league_id")
-    val leagueId: Int?,
+    val leagueId: Long?,
 
     @SerializedName("serie_id")
-    val serieId: Int?,
+    val serieId: Long?,
 
     @SerializedName("tournament_id")
-    val tournamentId: Int?,
+    val tournamentId: Long?,
 
     @SerializedName("scheduled_at")
     val scheduledAt: String?,
