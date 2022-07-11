@@ -24,9 +24,9 @@ class MatchListActivity : AppCompatActivity(), MatchListClickListener {
     private var uiStateJob: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
-
         super.onCreate(savedInstanceState)
+
+        setTheme(R.style.ThemeThemeCSTvApp)
 
         binding = ActivityMatchListBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -11,7 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/light</item>
+        <item name="android:statusBarColor">@color/grey</item>
 
         <!-- Background color. -->
         <item name="android:windowBackground">@color/light</item>
@@ -24,10 +24,8 @@
     </style>
 
     <!-- Splash screen theme. -->
-    <style name="ThemeThemeCSTvApp.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="ThemeSplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:statusBarColor">@color/transparent</item>
     </style>
-    <style name="ThemeThemeCSTvApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="ThemeThemeCSTvApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
