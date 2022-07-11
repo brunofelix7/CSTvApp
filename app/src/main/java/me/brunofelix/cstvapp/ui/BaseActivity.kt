@@ -17,5 +17,11 @@ abstract class BaseActivity<B : ViewBinding>(val bindingFactory: (LayoutInflater
 
         binding = bindingFactory(layoutInflater)
         setContentView(binding.root)
+
+        uiSetup()
+        collectData()
     }
+
+    abstract fun uiSetup()
+    abstract fun collectData()
 }

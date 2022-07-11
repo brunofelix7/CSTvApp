@@ -8,5 +8,11 @@ import me.brunofelix.cstvapp.ui.BaseActivity
 class MatchDetailsActivity : BaseActivity<ActivityMatchDetailsBinding>(
     ActivityMatchDetailsBinding::inflate) {
 
+    override fun uiSetup() {
 
+    }
+
+    override fun collectData() {
+
+    }
 }

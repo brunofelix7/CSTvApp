@@ -27,7 +27,6 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.fetchMatches()
-        collectData()
     }
 
     override fun onDestroy() {
@@ -35,7 +34,24 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
         super.onDestroy()
     }
 
-    private fun collectData() {
+    override fun uiSetup() {
+        binding.toolbar.inflateMenu(R.menu.matches_menu)
+        binding.toolbar.setOnMenuItemClickListener { item ->
+            when(item.itemId) {
+                R.id.action_refresh -> {
+                    viewModel.fetchMatches()
+                    true
+                }
+                R.id.action_daynight -> {
+                    toast("Call Bottom Sheets")
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    override fun collectData() {
         uiStateJob = lifecycleScope.launch {
             viewModel.uiSateFlow.collect { uiState ->
                 when(uiState) {

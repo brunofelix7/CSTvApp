@@ -18,6 +18,10 @@
     <string name="msg_general_error">Ops! An error occurred, try again</string>
     <string name="msg_timeout_error">Could not connect to server</string>
 
+    <!-- TODO: Menu titles -->
+    <string name="title_daynight">DayNight</string>
+    <string name="title_refresh">Refresh</string>
+
     <!-- TODO: Accessibility -->
     <string name="acc_img_team_one">Image team one</string>
     <string name="acc_img_team_two">Image team two</string>
