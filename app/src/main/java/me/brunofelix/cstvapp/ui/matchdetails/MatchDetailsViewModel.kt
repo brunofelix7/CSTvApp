@@ -34,15 +34,9 @@ class MatchDetailsViewModel @Inject constructor(
                         _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
                     }
                 }
-                is TeamResult.OnNetworkError -> {
-                    _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
-                }
-                is TeamResult.OnTimeOutError -> {
-                    _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
-                }
-                is TeamResult.OnError -> {
-                    _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
-                }
+                is TeamResult.OnNetworkError ->_uiStateFlow.value = MatchDetailsUIState.OnError(result.message)
+                is TeamResult.OnTimeOutError -> _uiStateFlow.value = MatchDetailsUIState.OnError(result.message)
+                is TeamResult.OnError -> _uiStateFlow.value = MatchDetailsUIState.OnError(result.message)
             }            
         }
     }

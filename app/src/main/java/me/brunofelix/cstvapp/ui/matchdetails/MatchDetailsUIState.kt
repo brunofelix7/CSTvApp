@@ -6,5 +6,5 @@ sealed class MatchDetailsUIState {
     object Initial: MatchDetailsUIState()
     object Loading: MatchDetailsUIState()
     class OnSuccess(val data: List<TeamResponse?>): MatchDetailsUIState()
-    class OnError(val message: String): MatchDetailsUIState()
+    class OnError(val message: String?): MatchDetailsUIState()
 }

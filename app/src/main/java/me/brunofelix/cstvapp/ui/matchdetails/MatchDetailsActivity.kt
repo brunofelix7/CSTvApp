@@ -68,11 +68,13 @@ class MatchDetailsActivity : BaseActivity<ActivityMatchDetailsBinding>(
             viewModel.uiSateFlow.collect { uiState ->
                 when (uiState) {
                     is MatchDetailsUIState.Loading -> {
+                        binding.layoutError.root.isVisible = false
                         binding.playersOneList.isVisible = false
                         binding.playersTwoList.isVisible = false
                         binding.progressBar.isVisible = true
                     }
                     is MatchDetailsUIState.OnSuccess -> {
+                        binding.layoutError.root.isVisible = false
                         binding.playersOneList.isVisible = true
                         binding.playersTwoList.isVisible = true
                         binding.progressBar.isVisible = false
@@ -83,11 +85,11 @@ class MatchDetailsActivity : BaseActivity<ActivityMatchDetailsBinding>(
                         binding.playersTwoList.adapter = adapterPLayersTwo
                     }
                     is MatchDetailsUIState.OnError -> {
-                        // TODO: Layout empty
+                        binding.layoutError.root.isVisible = true
+                        binding.layoutError.textError.text = uiState.message
                         binding.playersOneList.isVisible = false
                         binding.playersTwoList.isVisible = false
                         binding.progressBar.isVisible = false
-                        toast(uiState.message)
                     }
                     else -> Unit
                 }

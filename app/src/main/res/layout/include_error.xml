@@ -9,11 +9,10 @@
         android:id="@+id/img_error"
         android:layout_width="192dp"
         android:layout_height="192dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_error"
         app:srcCompat="@mipmap/ic_robot" />
 
     <TextView
@@ -29,5 +28,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_error"
         tools:text="@string/msg_general_error" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.30" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

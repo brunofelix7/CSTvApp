@@ -1,12 +1,16 @@
 package me.brunofelix.cstvapp.data.api.repository
 
+import com.google.gson.Gson
 import me.brunofelix.cstvapp.R
 import me.brunofelix.cstvapp.data.api.ApiService
+import me.brunofelix.cstvapp.data.api.response.ErrorResponse
 import me.brunofelix.cstvapp.data.api.response.TeamResponse
+import me.brunofelix.cstvapp.data.api.result.MatchResult
 import me.brunofelix.cstvapp.data.api.result.TeamResult
 import me.brunofelix.cstvapp.util.AppProvider
 import timber.log.Timber
 import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 
 class TeamRepositoryImpl constructor(
     private val api: ApiService,
@@ -22,18 +26,21 @@ class TeamRepositoryImpl constructor(
             if (responseTeamOne.isSuccessful && responseTeamOne.body() != null) {
                 teamsList.add(responseTeamOne.body())
             } else {
-                TeamResult.OnError<String>(responseTeamOne.message())
+                val error = Gson().fromJson(responseTeamOne.errorBody()?.string(), ErrorResponse::class.java)
+                TeamResult.OnError<String>("${responseTeamOne.code()} - ${error.message}")
             }
             if (responseTeamTwo.isSuccessful && responseTeamTwo.body() != null) {
                 teamsList.add(responseTeamTwo.body())
             } else {
-                TeamResult.OnError<String>(responseTeamOne.message())
+                val error = Gson().fromJson(responseTeamTwo.errorBody()?.string(), ErrorResponse::class.java)
+                TeamResult.OnError<String>("${responseTeamTwo.code()} - ${error.message}")
             }
 
             TeamResult.OnSuccess(teamsList)
-        }
-
-        catch (e: SocketTimeoutException) {
+        } catch (e: UnknownHostException) {
+            Timber.e(e)
+            TeamResult.OnNetworkError(provider.res().getString(R.string.msg_connection_error))
+        } catch (e: SocketTimeoutException) {
             Timber.e(e)
             TeamResult.OnTimeOutError(provider.res().getString(R.string.msg_timeout_error))
         } catch (e: Exception) {
