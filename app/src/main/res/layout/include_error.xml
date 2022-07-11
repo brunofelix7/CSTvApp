@@ -9,6 +9,7 @@
         android:id="@+id/img_error"
         android:layout_width="192dp"
         android:layout_height="192dp"
+        android:contentDescription="@string/acc_img_error"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

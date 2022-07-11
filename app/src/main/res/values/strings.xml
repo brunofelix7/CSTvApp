@@ -38,5 +38,6 @@
     <string name="acc_img_team_two">Image team two</string>
     <string name="acc_img_league">Image league logo</string>
     <string name="acc_img_player">Image player</string>
+    <string name="acc_img_error">Image error</string>
 
 </resources>
