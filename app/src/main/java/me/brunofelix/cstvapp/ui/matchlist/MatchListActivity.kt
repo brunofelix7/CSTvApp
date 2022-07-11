@@ -32,11 +32,6 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
         viewModel.fetchMatches()
     }
 
-    override fun onDestroy() {
-        uiStateJob?.cancel()
-        super.onDestroy()
-    }
-
     override fun uiSetup() {
         binding.toolbar.inflateMenu(R.menu.matches_menu)
         binding.toolbar.setOnMenuItemClickListener { item ->
@@ -102,5 +97,10 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
         val intent = Intent(this, MatchDetailsActivity::class.java)
         intent.putExtra(getString(R.string.match_key), matchExtra)
         startActivity(intent)
+    }
+
+    override fun onDestroy() {
+        uiStateJob?.cancel()
+        super.onDestroy()
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:windowBackground">
@@ -31,42 +32,44 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/img_team_one"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:id="@+id/img_player"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="@string/acc_img_team_one"
+                android:contentDescription="@string/acc_img_player"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@mipmap/ic_player" />
 
             <TextView
-                android:id="@+id/tv_nickname"
+                android:id="@+id/text_nickname"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
                 android:gravity="end"
-                android:text="Fallen"
-                android:textSize="18sp"
+                android:text="@string/text_player"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/img_team_one"
-                app:layout_constraintEnd_toStartOf="@+id/img_team_one"
+                app:layout_constraintBottom_toBottomOf="@+id/img_player"
+                app:layout_constraintEnd_toStartOf="@+id/img_player"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/img_team_one" />
+                app:layout_constraintTop_toTopOf="@+id/img_player"
+                tools:text="@string/text_player_one_nickname" />
 
             <TextView
-                android:id="@+id/tv_fullname"
+                android:id="@+id/text_fullname"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
                 android:gravity="end"
-                android:text="Grabriel Toledo"
-                android:textColor="#6C6B7E"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/img_team_one"
-                app:layout_constraintStart_toStartOf="@+id/tv_nickname"
-                app:layout_constraintTop_toBottomOf="@+id/tv_nickname" />
+                android:text="@string/text_player"
+                android:textColor="@color/grey_secondary"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/img_player"
+                app:layout_constraintStart_toStartOf="@+id/text_nickname"
+                app:layout_constraintTop_toBottomOf="@+id/text_nickname"
+                tools:text="@string/text_player_one_fullname" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

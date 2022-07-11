@@ -11,9 +11,14 @@
     <string name="text_vs">VS</string>
     <string name="text_team_one">Team One</string>
     <string name="text_team_two">Team Two</string>
+    <string name="text_player">Player</string>
     <string name="text_league">IEM Cologne 2022</string>
     <string name="text_serie">Open Qualifier Season 2022</string>
     <string name="text_date_time">Date/Time</string>
+    <string name="text_player_one_nickname">Fallen</string>
+    <string name="text_player_one_fullname">Grabriel Toledo</string>
+    <string name="text_player_two_nickname">fnx</string>
+    <string name="text_player_two_fullname">Lincoln Lau</string>
 
     <!-- TODO: App messages -->
     <string name="msg_general_error">Ops! An error occurred, try again</string>
@@ -31,5 +36,6 @@
     <string name="acc_img_team_one">Image team one</string>
     <string name="acc_img_team_two">Image team two</string>
     <string name="acc_img_league">Image league logo</string>
+    <string name="acc_img_player">Image player</string>
 
 </resources>
