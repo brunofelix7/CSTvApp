@@ -33,7 +33,7 @@ class MatchDetailsPlayersOneAdapter constructor(
         @SuppressLint("SetTextI18n")
         fun bind(player: PlayerResponse) {
             binding.textNickname.text = player.nickname
-            binding.textFullname.text = player.firstName + player.lastName
+            binding.textFullname.text = "${player.firstName} ${player.lastName}"
             if (player.imageUrl != null) {
                 loadImage(binding.imgPlayer, player.imageUrl)
             }

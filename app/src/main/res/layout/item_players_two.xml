@@ -33,44 +33,46 @@
 
             <ImageView
                 android:id="@+id/img_player"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginBottom="16dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
                 android:contentDescription="@string/acc_img_player"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@mipmap/ic_player" />
 
-            <TextView
-                android:id="@+id/text_nickname"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:gravity="start"
-                android:text="@string/text_player"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/img_player"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_player"
-                app:layout_constraintTop_toTopOf="@+id/img_player"
-                tools:text="@string/text_player_two_nickname" />
+                app:layout_constraintTop_toTopOf="@+id/img_player">
 
-            <TextView
-                android:id="@+id/text_fullname"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:gravity="start"
-                android:text="@string/text_player"
-                android:textColor="@color/grey_secondary"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/img_player"
-                app:layout_constraintTop_toBottomOf="@+id/text_nickname"
-                tools:text="@string/text_player_two_fullname" />
+                <TextView
+                    android:id="@+id/text_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/text_player"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="@string/text_player_two_nickname" />
+
+                <TextView
+                    android:id="@+id/text_fullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/text_player"
+                    android:textColor="@color/grey_secondary"
+                    android:textSize="11sp"
+                    tools:text="@string/text_player_two_fullname" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

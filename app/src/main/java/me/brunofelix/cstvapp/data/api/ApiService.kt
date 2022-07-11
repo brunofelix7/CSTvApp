@@ -11,6 +11,6 @@ interface ApiService {
     @GET("csgo/matches")
     suspend fun fetchMatches(): Response<List<MatchResponse>>
 
-    @GET("teams")
+    @GET("teams/{id}")
     suspend fun getTeam(@Path("id") id: Long): Response<TeamResponse>
 }

@@ -7,8 +7,8 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import me.brunofelix.cstvapp.data.api.ApiResult
 import me.brunofelix.cstvapp.data.api.repository.TeamRepository
+import me.brunofelix.cstvapp.data.api.result.TeamResult
 import me.brunofelix.cstvapp.util.AppProvider
 import javax.inject.Inject
 
@@ -22,25 +22,25 @@ class MatchDetailsViewModel @Inject constructor(
     private val _uiStateFlow = MutableStateFlow<MatchDetailsUIState>(MatchDetailsUIState.Initial)
     val uiSateFlow: StateFlow<MatchDetailsUIState> get() = _uiStateFlow
 
-    fun getTeam(id: Long) {
+    fun getTeam(teamOneId: Long, teamTwoId: Long) {
         _uiStateFlow.value = MatchDetailsUIState.Loading
 
         viewModelScope.launch(dispatcher) {
-            when(val result = repository.getTeam(id)) {
-                is ApiResult.OnSuccess -> {
-                    if (result.data == null) {
-                        _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
-                    } else {
+            when(val result = repository.getTeam(teamOneId, teamTwoId)) {
+                is TeamResult.OnSuccess -> {
+                    if (result.data != null && result.data.isNotEmpty()) {
                         _uiStateFlow.value = MatchDetailsUIState.OnSuccess(result.data)
+                    } else {
+                        _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
                     }
                 }
-                is ApiResult.OnNetworkError -> {
+                is TeamResult.OnNetworkError -> {
                     _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
                 }
-                is ApiResult.OnTimeOutError -> {
+                is TeamResult.OnTimeOutError -> {
                     _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
                 }
-                is ApiResult.OnError -> {
+                is TeamResult.OnError -> {
                     _uiStateFlow.value = MatchDetailsUIState.OnError(result.message ?: "")
                 }
             }            

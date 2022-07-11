@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import me.brunofelix.cstvapp.data.api.ApiResult
+import me.brunofelix.cstvapp.data.api.result.MatchResult
 import me.brunofelix.cstvapp.data.api.repository.MatchRepository
 import me.brunofelix.cstvapp.util.AppProvider
 import javax.inject.Inject
@@ -27,20 +27,20 @@ class MatchListViewModel @Inject constructor(
 
         viewModelScope.launch(dispatcher) {
             when(val result = repository.fetchMatches()) {
-                is ApiResult.OnSuccess -> {
+                is MatchResult.OnSuccess -> {
                     if (result.data == null) {
                         _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
                     } else {
                         _uiStateFlow.value = MatchListUIState.OnSuccess(result.data)
                     }
                 }
-                is ApiResult.OnNetworkError -> {
+                is MatchResult.OnNetworkError -> {
                     _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
                 }
-                is ApiResult.OnTimeOutError -> {
+                is MatchResult.OnTimeOutError -> {
                     _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
                 }
-                is ApiResult.OnError -> {
+                is MatchResult.OnError -> {
                     _uiStateFlow.value = MatchListUIState.OnError(result.message ?: "")
                 }
             }
