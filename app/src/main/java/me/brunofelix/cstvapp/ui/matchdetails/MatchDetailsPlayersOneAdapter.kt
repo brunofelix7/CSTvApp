@@ -18,6 +18,7 @@ class MatchDetailsPlayersOneAdapter constructor(
     }
 
     override fun onBindViewHolder(holder: MatchDetailsPlayersOneViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         holder.bind(players[position])
     }
 

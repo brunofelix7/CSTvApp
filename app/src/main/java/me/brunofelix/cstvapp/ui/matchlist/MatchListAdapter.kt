@@ -26,6 +26,7 @@ class MatchListAdapter constructor(
     }
 
     override fun onBindViewHolder(holder: MatchListAdapter.MatchListViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         holder.bind(matches[position])
         holder.binding.cardItem.setOnClickListener {
             listener.onItemClick(matches[position])

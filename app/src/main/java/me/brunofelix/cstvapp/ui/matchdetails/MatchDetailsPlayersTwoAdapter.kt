@@ -19,6 +19,7 @@ class MatchDetailsPlayersTwoAdapter constructor(
     }
 
     override fun onBindViewHolder(holder: MatchDetailsPlayersTwoViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         holder.bind(players[position])
     }
 
