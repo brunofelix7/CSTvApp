@@ -19,6 +19,7 @@
     <string name="text_player_one_fullname">Grabriel Toledo</string>
     <string name="text_player_two_nickname">fnx</string>
     <string name="text_player_two_fullname">Lincoln Lau</string>
+    <string name="text_dark_mode">Dark mode?</string>
 
     <!-- TODO: App messages -->
     <string name="msg_general_error">Ops! An error occurred, try again</string>
@@ -32,6 +33,9 @@
 
     <!-- TODO: Extra keys -->
     <string name="match_key">MATCH_EXTRA</string>
+
+    <!-- TODO: Preferences keys -->
+    <string name="theme_key">dark_mode</string>
 
     <!-- TODO: Accessibility -->
     <string name="acc_img_team_one">Image team one</string>
