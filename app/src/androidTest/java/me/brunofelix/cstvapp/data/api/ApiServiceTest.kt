@@ -1,7 +1,7 @@
 package me.brunofelix.cstvapp.data.api
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.test.filters.MediumTest
+import androidx.test.filters.LargeTest
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -13,7 +13,7 @@ import org.junit.Test
 import javax.inject.Inject
 import javax.inject.Named
 
-@MediumTest
+@LargeTest
 @HiltAndroidTest
 @ExperimentalCoroutinesApi
 class ApiServiceTest {
@@ -34,9 +34,16 @@ class ApiServiceTest {
     }
 
     @Test
-    fun test_ApiCall() = runTest {
+    fun test_isFetchMatchesRequestIsSuccessfully_returnsTrue() = runTest {
         val response = api.fetchMatches()
 
-        assertThat(response.body()).isNotNull()
+        assertThat(response.isSuccessful).isTrue()
+    }
+
+    @Test
+    fun test_isGetTeamRequestIsSuccessfully_returnsTrue() = runTest {
+        val response = api.getTeam(131086)
+
+        assertThat(response.isSuccessful).isTrue()
     }
 }

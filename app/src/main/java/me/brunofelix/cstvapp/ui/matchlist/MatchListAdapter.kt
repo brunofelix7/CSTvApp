@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import me.brunofelix.cstvapp.R
 import me.brunofelix.cstvapp.data.api.response.MatchResponse
 import me.brunofelix.cstvapp.databinding.ItemMatchBinding
+import me.brunofelix.cstvapp.util.PATTERN_EEE_HH_MM
 import me.brunofelix.cstvapp.util.convertDate
 import me.brunofelix.cstvapp.util.loadImage
 import org.joda.time.LocalDate
@@ -61,7 +62,7 @@ class MatchListAdapter constructor(
                 }
                 else ->  {
                     binding.layoutDateTime.setBackgroundResource(R.drawable.bg_rounded)
-                    binding.textDateTime.text = convertDate(match.scheduledAt)
+                    binding.textDateTime.text = convertDate(match.scheduledAt, PATTERN_EEE_HH_MM)
                 }
             }
 

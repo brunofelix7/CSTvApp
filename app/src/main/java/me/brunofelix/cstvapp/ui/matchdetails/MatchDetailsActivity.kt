@@ -14,6 +14,7 @@ import me.brunofelix.cstvapp.extra.MatchExtra
 import me.brunofelix.cstvapp.ui.BaseActivity
 import me.brunofelix.cstvapp.ui.matchlist.MatchListAdapter
 import me.brunofelix.cstvapp.ui.matchlist.MatchListUIState
+import me.brunofelix.cstvapp.util.PATTERN_EEE_HH_MM
 import me.brunofelix.cstvapp.util.convertDate
 import me.brunofelix.cstvapp.util.loadImage
 
@@ -37,7 +38,7 @@ class MatchDetailsActivity : BaseActivity<ActivityMatchDetailsBinding>(
             binding.textSerie.text = match?.serieName
             binding.textTeamOne.text = match?.teamOneName
             binding.textTeamTwo.text = match?.teamTwoName
-            binding.textDateTime.text = convertDate(match?.scheduledAt)
+            binding.textDateTime.text = convertDate(match?.scheduledAt, PATTERN_EEE_HH_MM)
 
             if (match?.teamOneImageUrl != null && match?.teamOneImageUrl != null) {
                 loadImage(binding.imgTeamOne, match?.teamOneImageUrl!!)

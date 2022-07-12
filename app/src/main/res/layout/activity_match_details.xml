@@ -48,16 +48,18 @@
                     android:id="@+id/text_league"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_league"
+                    android:text="@string/title_league"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="@string/text_league" />
 
                 <TextView
                     android:id="@+id/text_serie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_serie"
-                    android:textSize="12sp" />
+                    android:text="@string/title_series"
+                    android:textSize="12sp"
+                    tools:text="@string/text_serie" />
 
             </LinearLayout>
 
