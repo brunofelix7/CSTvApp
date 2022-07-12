@@ -15,4 +15,5 @@ data class MatchExtra(
     val teamTwoName: String?,
     val teamOneImageUrl: String?,
     val teamTwoImageUrl: String?,
+    val status: String?
 ) : Parcelable

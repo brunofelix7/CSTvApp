@@ -97,7 +97,8 @@ class MatchListActivity : BaseActivity<ActivityMatchListBinding>(
                 teamOneName = match.opponents[0].opponent?.name,
                 teamTwoName = match.opponents[1].opponent?.name,
                 teamOneImageUrl = match.opponents[0].opponent?.imageUrl,
-                teamTwoImageUrl = match.opponents[1].opponent?.imageUrl
+                teamTwoImageUrl = match.opponents[1].opponent?.imageUrl,
+                status = match.status
             )
         }
 

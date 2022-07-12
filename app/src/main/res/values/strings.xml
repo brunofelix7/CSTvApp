@@ -26,6 +26,8 @@
     <string name="msg_general_error">Ops! An error occurred, try again</string>
     <string name="msg_timeout_error">Could not connect to server</string>
     <string name="msg_connection_error">You are not connected to the internet</string>
+    <string name="msg_successfully_scheduled">Successfully scheduled</string>
+    <string name="msg_already_scheduled">Already scheduled</string>
 
     <!-- TODO: Menu titles -->
     <string name="title_daynight">DayNight</string>
@@ -37,6 +39,16 @@
 
     <!-- TODO: Preferences keys -->
     <string name="theme_key">dark_mode</string>
+
+    <!-- TODO: WorkerManager keys -->
+    <string name="worker_tag_key">WORKER_TAG</string>
+    <string name="teams_name_key">TEAMS_NAME</string>
+    <string name="league_name_key">LEAGUE_NAME</string>
+
+    <!-- TODO: Notifications -->
+    <string name="channel_id">me.brunofelix.cstvapp</string>
+    <string name="channel_name">CS Tv</string>
+    <string name="channel_description">Notifies the schedule of a match.</string>
 
     <!-- TODO: Accessibility -->
     <string name="acc_img_team_one">Image team one</string>
