@@ -20,7 +20,6 @@ import javax.inject.Named
 object ApiModuleTest {
 
     @Provides
-    @Named("test_client")
     fun provideClient() = OkHttpClient.Builder()
         .addInterceptor(ApiInterceptor())
         .readTimeout(30, TimeUnit.SECONDS)

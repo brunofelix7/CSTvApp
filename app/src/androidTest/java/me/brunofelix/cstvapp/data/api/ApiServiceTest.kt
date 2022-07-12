@@ -2,11 +2,9 @@ package me.brunofelix.cstvapp.data.api
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.filters.MediumTest
-import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
-import dagger.hilt.android.testing.HiltTestApplication
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
@@ -16,6 +14,7 @@ import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Named
 
+@MediumTest
 @HiltAndroidTest
 @ExperimentalCoroutinesApi
 class ApiServiceTest {
@@ -38,8 +37,6 @@ class ApiServiceTest {
     @Test
     fun test_ApiCall() = runTest {
         val response = api.fetchMatches()
-
-        Timber.d(response.body().toString())
 
         assertThat(response.body()).isNotNull()
     }
